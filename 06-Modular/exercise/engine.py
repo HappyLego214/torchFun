@@ -2,15 +2,13 @@ import torch
 from tqdm.auto import tqdm
 from torch.utils.data import DataLoader
 from typing import Dict, List, Tuple
-
-
 def train_step(
         model: torch.nn.Module,
         dataloader: torch.utils.data.DataLoader,
         loss_fn: torch.nn.Module,
         optimizer: torch.optim.Optimizer,
-        device: torch.Device,
-):
+        device: torch.device,
+) -> Tuple[float, float]:
     model.train()
     train_loss, train_acc = 0, 0
 
@@ -24,21 +22,22 @@ def train_step(
         loss.backward()
         optimizer.step()
 
-        pred_prob = torch.softmax(logits, dim=1)
+        pred_prob = torch.argmax(torch.softmax(logits, dim=1), dim=1)
         train_acc += ((pred_prob == y).sum().item() / len(pred_prob))
 
     train_loss /= len(dataloader)
     train_acc /= len(dataloader)
 
-    return train_loss < train_acc
+    return train_loss, train_acc
 
 
 def test_step(
         model: torch.nn.Module,
         dataloader: torch.utils.data.DataLoader,
         loss_fn: torch.nn.Module,
-        device: torch.Device,
+        device: torch.device,
 ) -> Tuple[float, float]:
+
     model.eval()
     test_loss, test_acc = 0, 0
     with torch.inference_mode():
@@ -48,7 +47,7 @@ def test_step(
             loss = loss_fn(logits, y)
             test_loss += loss.item()
 
-            pred_prob = torch.softmax(logits, dim=1)
+            pred_prob = torch.argmax(torch.softmax(logits, dim=1), dim=1)
             test_acc += ((pred_prob == y).sum().item() / len(pred_prob))
 
     test_loss /= len(dataloader)
@@ -63,7 +62,7 @@ def train(
         test_dataloader: torch.utils.data.DataLoader,
         loss_fn: torch.nn.Module,
         optimizer: torch.optim.Optimizer,
-        device: torch.Device,
+        device: torch.device,
         epochs: int
 ):
 
@@ -78,10 +77,12 @@ def train(
         train_loss, train_acc = train_step(model, train_dataloader, loss_fn, optimizer, device)
         test_loss, test_acc = test_step(model, test_dataloader, loss_fn, device)
 
-        print(f"Train Loss: {train_loss}",
-              f"Train Acc: {train_acc}",
-              f"Test Loss: {test_loss}",
-              f"Test Acc: {test_acc}")
+        print(
+              f"\nEpoch: {epoch+1} |"
+              f"Train Loss: {train_loss:.4f} | ",
+              f"Train Acc: {train_acc:.4f} | ",
+              f"Test Loss: {test_loss:.4f} | ",
+              f"Test Acc: {test_acc:.4f} |")
 
         results['train_loss'].append(train_loss)
         results['train_acc'].append(train_acc)

@@ -56,7 +56,7 @@ def main():
 
     utils.save_model(model=model_0,
                      target_dir=str(exercise_model),
-                     model_name='TinyVGG')
+                     model_name='TinyVGG.pth')
 
 
 if __name__ == '__main__':
