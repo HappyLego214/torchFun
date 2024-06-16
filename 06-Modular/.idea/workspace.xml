@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16d8d014-fe66-4da7-95e9-c3f02596dd50" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/exercise/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/06-Modular.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/06-Modular.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02-Workflow/Torch.nn.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../02-Workflow/Torch.nn.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise/exercise_model/TinyVGG.pth" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/exercise_model/TinyVGG.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/predict.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HappyLego214"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HappyLego214&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:HappyLego214/torchFun.git",
-    "accountId": "2253bc8b-dc07-4e5a-8002-887abe184b50"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:HappyLego214/torchFun.git&quot;,
+    &quot;accountId&quot;: &quot;2253bc8b-dc07-4e5a-8002-887abe184b50&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/scripts/train.py" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -55,22 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.train.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/josh/Dev/pytorch/torchFun/06-Modular",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/josh/Mount/Jupyter/torchFun/06-Modular&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/exercise" />
@@ -127,6 +123,7 @@
       <workItem from="1718350140083" duration="193000" />
       <workItem from="1718350345695" duration="6827000" />
       <workItem from="1718360677678" duration="15510000" />
+      <workItem from="1718525683721" duration="3248000" />
     </task>
     <servers />
   </component>
