@@ -2,30 +2,16 @@ import data_setup
 import engine
 import model_builder
 import utils
+import argparse
 
 import torch
 import os
 from pathlib import Path
 from torchvision import transforms
 
-INPUT_SHAPE = 3
-HIDDEN_UNITS = 10
-LR = 0.001
-BATCH_SIZE = 32
-EPOCHS = 10
-NUM_WORKERS = 0
+
 def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
-    data_path = Path('data')
-    image_path = data_path/'pizza_steak_sushi'
-    exercise_model = Path('exercise_model')
-
-    exercise_dir = os.getcwd()
-    parent_dir = os.path.dirname(exercise_dir)
-
-    train_dir = parent_dir/image_path/'train'
-    test_dir = parent_dir/image_path/'test'
 
     data_transform = transforms.Compose([
         transforms.Resize((64,64)),
@@ -60,4 +46,31 @@ def main():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Train Model')
+    parser.add_argument('--data_dir', type=str, default='data', help='path to data location')
+    parser.add_argument('--learning_rate', type=float, default=0.001, help='assign learning rate')
+    parser.add_argument('--batch_size', type=int, default=32, help='assign batch size')
+    parser.add_argument('--epochs', type=int, default=10, help='number of epochs')
+    parser.add_argument('--input_shape', type=int, default=3, help='input image shape')
+    parser.add_argument('--hidden_units', type=int, default=10, help='number of hidden units')
+    args = parser.parse_args()
+
+    DATA_PATH = Path(args.data_dir)
+    INPUT_SHAPE = args.input_shape
+    HIDDEN_UNITS = args.hidden_units
+    LR = args.learning_rate
+    BATCH_SIZE = args.batch_size
+    EPOCHS = args.epochs
+    # Keep at 0 or VERY SLOW TRAINING
+    NUM_WORKERS = 0
+
+    image_path = DATA_PATH/'pizza_steak_sushi'
+    exercise_model = Path('exercise_model')
+
+    exercise_dir = os.getcwd()
+    parent_dir = os.path.dirname(exercise_dir)
+
+    train_dir = parent_dir/image_path/'train'
+    test_dir = parent_dir/image_path/'test'
+
     main()

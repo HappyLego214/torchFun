@@ -1,18 +1,18 @@
-import torch
 import os
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import torch
+from torch import nn
+from torch import optim
+from torch.utils.data import DataLoader, Dataset
+from torchvision import transforms, datasets
+from tqdm.auto import tqdm
+
 import data_setup
 import engine
 import model_builder
 import utils
-
-from torchvision import transforms, datasets
-from torch.utils.data import DataLoader, Dataset
-from torch import optim
-from torch import nn
-
-from tqdm.auto import tqdm
-from pathlib import Path
-from typing import Dict, List, Tuple
 
 BATCH_SIZE = 32
 EPOCHS = 10
